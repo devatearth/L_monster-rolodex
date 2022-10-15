@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .green{
+        .green {
             color: green;
         }
     </style>
@@ -20,15 +20,22 @@
     <script src="https://unpkg.com/react@18.0.0-rc.0/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18.0.0-rc.0/umd/react-dom.development.js"></script>
     <script>
+        const Person = ({ name, role }) => {
+            return React.createElement('span', {}, [
+                React.createElement('h3', {}, name),
+                React.createElement('p', {}, role)
+            ])
+        }
         const App = () => {
             return React.createElement('div', {}, [
-                React.createElement('h1', { class: 'green' }, 'React is Rendered')
+                React.createElement('h1', { class: 'green' }, 'React is Rendered'),
+                React.createElement(Person, { name: 'TOM', role: 'Actor' }, null),
+                React.createElement(Person, { name: 'Jerry', role: 'Actor' }, null)
             ]);
         };
-        ReactDOM.render(
-            React.createElement(App),
-            document.getElementById('root')
-        );
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(App));
     </script>
 </body>
+
 </html>
