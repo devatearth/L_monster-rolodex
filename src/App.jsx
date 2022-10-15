@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import CardList from './Components/card-list/card-list-component';
 import SearchBox from './Components/search-box/search-boc-component';
@@ -18,7 +18,7 @@ const App = () => {
       return monster.name.toLowerCase().includes(searchField);
     });
     setFilteredMonsters(newFilteredMonsters);
-  }, [monsters,searchField]);
+  }, [monsters, searchField]);
 
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLowerCase();
