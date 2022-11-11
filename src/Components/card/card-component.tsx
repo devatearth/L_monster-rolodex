@@ -1,7 +1,16 @@
-
+import React from 'react';
 import "./card.styles.css";
 
-const Card = ({ monster }) => {
+export type Monster = {
+    id: string;
+    name: string;
+    email: string;
+};
+type cardProps = {
+    monster: Monster
+}
+
+const Card = ({ monster }: cardProps) => {
     const { id, name, email } = monster;
     return (
         <div className="card-container" key={id}>
